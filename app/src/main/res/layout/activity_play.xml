@@ -1,0 +1,79 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMagenta"
+    tools:context="universidad.trabajo.concentrese.main.PlayActivity"
+    >
+
+
+    <!-- Cabecera -->
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        >
+
+        <TextView
+            android:layout_column="0"
+            android:text="Total Jugadas"
+            android:width="190dp"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            />
+
+        <TextView
+            android:layout_column="1"
+            android:text="Tiempo"
+            android:layout_gravity="right|top"
+            android:textSize="20dp"
+            android:paddingTop="20dp"
+            android:width="190dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            />
+
+        <TextView
+            android:layout_column="0"
+            android:text="29"
+            android:textSize="17dp"
+            android:width="190dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            />
+
+        <TextView
+            android:layout_column="1"
+            android:text="40 minutos"
+            android:layout_gravity="right|top"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:width="190dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            />
+
+
+
+    </GridLayout>
+
+    <!-- Cuerpo (Juego)-->
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:columnWidth="90dp"
+        android:numColumns="4"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="2dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:id="@+id/lista_botones"
+        >
+    </GridView>
+
+</FrameLayout>

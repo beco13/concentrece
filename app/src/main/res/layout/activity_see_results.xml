@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="universidad.trabajo.concentrese.SeeResultsActivity"
+    android:orientation="vertical"
+    >
+
+    <!-- Cabecera -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorMagenta"
+
+        >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Mejores resultados"
+            android:gravity="center_horizontal"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            />
+
+    </LinearLayout>
+
+    <!-- Cuerpo -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        >
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lista_resultados"
+            >
+        </ListView>
+
+    </LinearLayout>
+</LinearLayout>

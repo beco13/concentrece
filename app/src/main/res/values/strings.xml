@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Concentrese</string>
+
+    <string name="title_activity_user_register">Registrar Usuario</string>
+
+    <string name="version">
+        Versión:    <u>0.0.1</u>
+    </string>
+
+    <string name="copyright">
+        <u>
+            <b>
+                Concentrese
+            </b>
+        </u>
+
+        y los logotipos de
+
+        <u>
+            <b>
+                Concentrese
+            </b>
+        </u>
+
+        son marcas registradas de  Laura, Alejandro y Oscar Inc.
+
+    </string>
+
+    <string name="copyright2">
+        Todos los derechos reservados \u00A9 2015
+    </string>
+
+    <string name="title_activity_play">PlayActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+</resources>
