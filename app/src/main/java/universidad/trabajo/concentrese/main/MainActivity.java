@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 
 
-
 import universidad.trabajo.concentrese.R;
 import universidad.trabajo.concentrese.core.Auth;
 
@@ -22,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClick(View view){
+    public void onClick(View view) {
 
-        switch (view.getId()){
+        switch (view.getId()) {
 
             case R.id.btn_copyright:
 
@@ -42,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_jugar:
 
-                    Intent intentPlayActivity = new Intent(MainActivity.this, PlayActivity.class);
-                    startActivity(intentPlayActivity);
+                Intent intentPlayActivity = new Intent(MainActivity.this, PlayActivity.class);
+                startActivity(intentPlayActivity);
 
                 break;
             default:
 
-                System.out.print("id back button: "+view.getId());
+                System.out.print("id back button: " + view.getId());
 
                 break;
         }
@@ -56,11 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
-
-        //super.onBackPressed();
-
-
+    public void onBackPressed() {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder
@@ -68,10 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // FIRE ZE MISSILES!
-
-                        Auth userAuth = new Auth();
-                        userAuth.logout(getApplicationContext());
-
+                        logout();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -82,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
         // Create the AlertDialog object and return it
         AlertDialog tmpDialog = builder.create();
         tmpDialog.show();
+    }
+
+    private void logout() {
+        Auth userAuth = new Auth();
+        userAuth.logout(getApplicationContext());
+        super.onBackPressed();
     }
 
 

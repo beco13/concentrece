@@ -1,5 +1,6 @@
 package universidad.trabajo.concentrese.signin;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void loggin (){
+
         EditText fieldEmail = (EditText) findViewById(R.id.input_field_email);
         EditText fieldPass = (EditText) findViewById(R.id.input_field_pass);
 
@@ -27,6 +29,7 @@ public class LogInActivity extends AppCompatActivity {
 
         if(authUser.toAuthenticate(fieldEmail.getText().toString(),fieldPass.getText().toString())){
             authUser.toSave(getApplicationContext());
+
             Intent intentHome = new Intent(LogInActivity.this,MainActivity.class);
             startActivity(intentHome);
         }else{
@@ -39,6 +42,8 @@ public class LogInActivity extends AppCompatActivity {
             Toast message = Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG);
             message.show();
         }
+
+
     }
 
 
@@ -47,7 +52,19 @@ public class LogInActivity extends AppCompatActivity {
             case R.id.btn_iniciar_sesion:
                 this.loggin();
                 break;
+            case R.id.btn_default_data_login:
+                this.setDataLogin();
+                break;
         }
+    }
+
+    public void setDataLogin(){
+        EditText fieldEmail = (EditText) findViewById(R.id.input_field_email);
+        EditText fieldPass = (EditText) findViewById(R.id.input_field_pass);
+
+        fieldEmail.setText("laura@gmail.com");
+        fieldPass.setText("12345678");
+
     }
 
 }

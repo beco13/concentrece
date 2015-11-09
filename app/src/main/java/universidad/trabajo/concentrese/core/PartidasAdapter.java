@@ -43,10 +43,11 @@ public class PartidasAdapter extends ArrayAdapter<Partida> {
         TextView totalJugadas = (TextView) row.findViewById(R.id.total_jugadas);
         TextView totalMinutos = (TextView) row.findViewById(R.id.total_minutos);
 
+        /*
         nombreJugador.setText(partida.getJugador().getNombre());
         totalJugadas.setText(Integer.toString(partida.getTotal_jugadas()) + " Jugada(s)");
         totalMinutos.setText(Double.toString(partida.getTotal_segundos() / 60 ) + " Minuto(s)");
-
+*/
 
         return row;
     }

@@ -1,5 +1,18 @@
 package universidad.trabajo.concentrese.core;
 
+import android.os.StrictMode;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.restlet.data.Form;
+import org.restlet.data.MediaType;
+import org.restlet.ext.json.JsonRepresentation;
+import org.restlet.representation.Representation;
+import org.restlet.resource.ClientResource;
+import org.restlet.resource.ResourceException;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -9,75 +22,77 @@ import java.util.*;
 public class Partida {
 
     private int id;
-    private Date created;
-    private Date fecha_inicio;
-    private Date fecha_fin;
-    private int total_segundos;
-    private int total_jugadas;
+    private Date fechaCreacion;
+    private int totalSegundos;
+    private int totalJugadas;
+    private int jugadorId;
+
+
     private Jugador jugador;
 
-    public Partida( Date created, Date fecha_inicio, Date fecha_fin, int total_segundos, int total_jugadas, Jugador jugador) {
-        this.created = created;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
-        this.total_segundos = total_segundos;
-        this.total_jugadas = total_jugadas;
-        this.jugador = jugador;
+
+    private String codeError;
+
+
+    public Partida( int jugadorId , int total_segundos, int total_jugadas) {
+        this.fechaCreacion = new Date();
+        this.totalSegundos = total_segundos;
+        this.totalJugadas = total_jugadas;
+        this.jugadorId = jugadorId;
     }
 
-    public int getId() {
-        return id;
-    }
+    public boolean toSave (){
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public Date getCreated() {
-        return created;
-    }
+        //permiso para acceder a internet
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
-    public void setCreated(Date created) {
-        this.created = created;
-    }
 
-    public Date getFecha_inicio() {
-        return fecha_inicio;
-    }
+        //decimos que valores son los que se van a enviar
+        Form formRestApi = new Form();
 
-    public void setFecha_inicio(Date fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
-    }
+        formRestApi.set("fecha_registro", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(this.fechaCreacion));
+        formRestApi.set("total_segundos", Integer.toString(this.totalSegundos));
+        formRestApi.set("total_jugadas", Integer.toString(this.totalJugadas));
+        formRestApi.set("jugador_id", Integer.toString(this.jugadorId));
 
-    public Date getFecha_fin() {
-        return fecha_fin;
-    }
+        //creamos un recurso para consumir el servicio correspondiente
+        ClientResource partidaResource = new ClientResource("http://192.168.0.24/concentrese/partidas");
 
-    public void setFecha_fin(Date fecha_fin) {
-        this.fecha_fin = fecha_fin;
-    }
 
-    public int getTotal_segundos() {
-        return total_segundos;
-    }
+        // Write the response entity on the console
+        try {
 
-    public void setTotal_segundos(int total_segundos) {
-        this.total_segundos = total_segundos;
-    }
+            Representation response = partidaResource.post(formRestApi, MediaType.APPLICATION_JSON);
+            JSONObject tmpJson = new JsonRepresentation(response).getJsonObject();
 
-    public int getTotal_jugadas() {
-        return total_jugadas;
-    }
+            this.id = Integer.parseInt(tmpJson.getString("id"));
 
-    public void setTotal_jugadas(int total_jugadas) {
-        this.total_jugadas = total_jugadas;
-    }
+            return true;
+        } catch (JSONException e) {
 
-    public Jugador getJugador() {
-        return jugador;
-    }
+            System.out.println(e);
 
-    public void setJugador(Jugador jugador) {
-        this.jugador = jugador;
+        } catch (ResourceException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            try {
+                JSONObject tmpJson = new JsonRepresentation(e.getResponse().getEntity()).getJsonObject();
+                this.codeError = tmpJson.getString("CODE_ERROR");
+            } catch (JSONException eTwo) {
+                System.out.println(eTwo);
+                this.codeError = "UNKNOWN";
+            } catch (IOException eTwo) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+        return false;
     }
 }

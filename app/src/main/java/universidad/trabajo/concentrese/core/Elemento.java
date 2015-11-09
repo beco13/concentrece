@@ -11,6 +11,8 @@ public class Elemento {
 
     Boolean visible = false;
 
+    boolean uncovered = false;
+
     @DrawableRes
     int imgDefault = R.mipmap.ic_question_circle_white;
 
@@ -22,7 +24,7 @@ public class Elemento {
     }
 
     public int getImage(){
-        if(visible){
+        if(uncovered || visible){
             return imgToDiscover;
         }else{
             return imgDefault;
@@ -37,19 +39,15 @@ public class Elemento {
         this.visible = visible;
     }
 
-    public int getImgDefault() {
-        return imgDefault;
-    }
-
-    public void setImgDefault(int imgDefault) {
-        this.imgDefault = imgDefault;
-    }
-
     public int getImgToDiscover() {
         return imgToDiscover;
     }
 
-    public void setImgToDiscover(int imgToDiscover) {
-        this.imgToDiscover = imgToDiscover;
+    public boolean getUncovered(){
+        return this.uncovered;
+    }
+
+    public void setUncovered(boolean uncovered){
+        this.uncovered = uncovered;
     }
 }

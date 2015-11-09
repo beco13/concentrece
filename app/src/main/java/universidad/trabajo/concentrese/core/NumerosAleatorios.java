@@ -21,7 +21,6 @@ public class NumerosAleatorios {
     }
 
     public int generar() {
-        System.out.println("informmacion de numeros: "+listaNumero);
         if (listaNumero.size() < (valorFinal - valorInicial) + 1) {
             //Aun no se han generado todos los numeros
             int numero = numeroAleatorio();//genero un numero

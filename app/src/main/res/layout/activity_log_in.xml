@@ -35,6 +35,9 @@
             android:src="@drawable/logo_puzzles_white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:id="@+id/btn_default_data_login"
             />
 
         <TextView

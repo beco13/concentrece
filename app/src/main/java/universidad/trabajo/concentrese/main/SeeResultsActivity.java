@@ -22,7 +22,7 @@ public class SeeResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_results);
 
-
+        /*
         Partida juegosRealizados [] = new Partida [] {
                 new Partida(new Date(),new Date(),new Date(),180,35,new Jugador("Jacinto Ramirez","jacinto.ramirez@gmail.com","1234_clave")),
                 new Partida(new Date(),new Date(),new Date(),120,30,new Jugador("Juliana Henao","juli.henao@gmail.com","4321_clave")),
@@ -33,6 +33,7 @@ public class SeeResultsActivity extends AppCompatActivity {
         listaResultados = (ListView) findViewById(R.id.lista_resultados);
 
         listaResultados.setAdapter(listViewAdapter);
+        */
 
     }
 }

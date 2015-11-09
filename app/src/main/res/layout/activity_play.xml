@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorMagenta"
-    tools:context="universidad.trabajo.concentrese.main.PlayActivity"
+    tools:context="universidad.trabajo.concentrese.PlayActivity">
     >
 
 
@@ -38,12 +38,13 @@
 
         <TextView
             android:layout_column="0"
-            android:text="29"
+            android:text="0"
             android:textSize="17dp"
             android:width="190dp"
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@android:color/white"
+            android:id="@+id/text_jugadas"
             />
 
         <TextView
@@ -55,6 +56,7 @@
             android:width="190dp"
             android:gravity="center"
             android:textColor="@android:color/white"
+            android:id="@+id/text_tiempo"
             />
 
 

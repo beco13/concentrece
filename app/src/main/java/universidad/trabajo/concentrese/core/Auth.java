@@ -133,4 +133,15 @@ public class Auth {
         userAuth.commit();
     }
 
+    public String getDateExpire() {
+        return dateExpire;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
 }
