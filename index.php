@@ -10,11 +10,11 @@ require 'libs/Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 
 
-//define('BDNAME', "concentrece");
+
 define('BDNAME', "concentrese");
 define('USER', "root");
-//define('PASS', "");
-define('PASS', "C0ll1nS_1917");
+define('PASS', "");
+
 
 
 $pdoInstance = new PDO('mysql:host=localhost;dbname=' . BDNAME, USER, PASS);
