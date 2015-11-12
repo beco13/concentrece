@@ -93,7 +93,7 @@ public class Jugador {
         formRestApi.set("correo", this.correo);
         formRestApi.set("clave", this.clave);
 
-        ClientResource jugadorResource = new ClientResource("http://192.168.0.24/concentrese/jugadores");
+        ClientResource jugadorResource = new ClientResource("http://52.24.40.174/api_concentrece/jugadores");
 
         // Write the response entity on the console
         try {
@@ -142,7 +142,7 @@ public class Jugador {
         formRestApi.set("correo", this.correo);
         formRestApi.set("clave", this.clave);
 
-        ClientResource jugadorResource = new ClientResource("http://192.168.0.24/concentrese/jugadores");
+        ClientResource jugadorResource = new ClientResource("http://52.24.40.174/api_concentrece/jugadores");
 
         // Write the response entity on the console
         try {

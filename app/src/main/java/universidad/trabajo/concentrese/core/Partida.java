@@ -59,7 +59,7 @@ public class Partida {
         formRestApi.set("jugador_id", Integer.toString(this.jugadorId));
 
         //creamos un recurso para consumir el servicio correspondiente
-        ClientResource partidaResource = new ClientResource("http://192.168.0.24/concentrese/partidas");
+        ClientResource partidaResource = new ClientResource("http://52.24.40.174/api_concentrece/partidas");
 
 
         // Write the response entity on the console

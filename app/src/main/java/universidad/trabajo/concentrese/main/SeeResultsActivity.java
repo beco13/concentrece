@@ -53,7 +53,7 @@ public class SeeResultsActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         //creamos un recurso para consumir el servicio correspondiente
-        ClientResource partidasResource = new ClientResource("http://192.168.0.24/concentrese/partidas");
+        ClientResource partidasResource = new ClientResource("http://52.24.40.174/api_concentrece/partidas");
 
         try {
 

@@ -53,7 +53,7 @@ public class Auth {
         formRestApi.set("clave", clave);
 
         //creamos un recurso para consumir el servicio correspondiente
-        ClientResource AuthResource = new ClientResource("http://192.168.0.24/concentrese/login");
+        ClientResource AuthResource = new ClientResource("http://52.24.40.174/api_concentrece/login");
 
 
         // Write the response entity on the console
