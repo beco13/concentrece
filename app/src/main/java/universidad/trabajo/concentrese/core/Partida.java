@@ -34,14 +34,15 @@ public class Partida {
     private String codeError;
 
 
-    public Partida( int jugadorId , int total_segundos, int total_jugadas) {
+    public Partida(int jugadorId, int total_segundos, int total_jugadas) {
         this.fechaCreacion = new Date();
         this.totalSegundos = total_segundos;
         this.totalJugadas = total_jugadas;
         this.jugadorId = jugadorId;
     }
 
-    public boolean toSave (){
+
+    public boolean toSave() {
 
 
         //permiso para acceder a internet
@@ -95,4 +96,25 @@ public class Partida {
 
         return false;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public Jugador getJugador(){
+        return this.jugador;
+    }
+
+    public int getTotalJugadas(){
+        return this.totalJugadas;
+    }
+
+    public int getTotalSegundos(){
+        return this.totalSegundos;
+    }
+
 }
