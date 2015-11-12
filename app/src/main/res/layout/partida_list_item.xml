@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="jacinto perez"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:id="@+id/nombre_jugador"
             android:textStyle="bold"
             />
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="48 jugadas"
-            android:textSize="17dp"
+            android:textSize="16dp"
             android:id="@+id/total_jugadas"
             />
 
@@ -41,8 +41,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="50 minutos"
-            android:textSize="17dp"
-            android:gravity="center"
+            android:textSize="16dp"
+            android:gravity="right|center"
             android:id="@+id/total_minutos"
             />
 

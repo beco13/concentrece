@@ -13,118 +13,125 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg_sign_in" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/logo_puzzles_white" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal"
-            android:text="Concéntrese"
-            android:textSize="25dp"
-            android:textColor="@android:color/white"
-            />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Un juego de memoria!"
-            android:textSize="18dp"
-            android:textColor="@android:color/white"
-            />
-
-
-        <!-- Boton play -->
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/btn_black_radius"
             android:orientation="vertical"
-            android:clickable="true"
-            android:onClick="onClick"
-            android:id="@+id/btn_jugar"
-            >
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logo_puzzles_white" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="@dimen/padding_button"
-                android:text="Jugar"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="Concéntrese"
+                android:textSize="25dp"
+                android:textColor="@android:color/white"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Un juego de memoria!"
                 android:textSize="18dp"
                 android:textColor="@android:color/white"
                 />
-        </LinearLayout>
 
 
-        <!-- Boton view results -->
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_black_radius"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:onClick="onClick"
-            android:id="@+id/btn_ver_resultados"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Boton play -->
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="@dimen/padding_button"
-                android:text="Ver resultados"
-                android:textSize="18dp"
-                android:textColor="@android:color/white"
-                />
-        </LinearLayout>
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_black_radius"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:id="@+id/btn_jugar"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="@dimen/padding_button"
+                    android:text="Jugar"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
 
 
-
-        <!-- Boton credits - autor -->
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_black_radius"
-            android:orientation="vertical"
-            android:id="@+id/btn_copyright"
-            android:clickable="true"
-            android:onClick="onClick"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Boton view results -->
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="@dimen/padding_button"
-                android:text="Creditos"
-                android:textSize="18dp"
-                android:textColor="@android:color/white"
-                />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_black_radius"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:id="@+id/btn_ver_resultados"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="@dimen/padding_button"
+                    android:text="Ver resultados"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+
+
+
+            <!-- Boton credits - autor -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_black_radius"
+                android:orientation="vertical"
+                android:id="@+id/btn_copyright"
+                android:clickable="true"
+                android:onClick="onClick"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="@dimen/padding_button"
+                    android:text="Creditos"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+
+
+
         </LinearLayout>
 
+    </ScrollView>
 
 
-    </LinearLayout>
 </FrameLayout>
